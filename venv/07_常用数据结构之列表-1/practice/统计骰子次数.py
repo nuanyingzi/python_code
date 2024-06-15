@@ -23,3 +23,13 @@ while times <= 6000:
 
     times += 1
 print(f'点数1次数:{f1}, 点数2次数:{f2}, 点数3次数:{f3}, 点数4次数:{f4}, 点数5次数:{f5},点数6次数:{f6}')
+
+# 优化后
+counters = [0] * 6
+for _ in range(6000):
+    point = random.randrange(1, 7)
+    counters[point-1] += 1
+for i in range(1, 7):
+    print(f'{i}点次数：{counters[i-1]}')
+
+
